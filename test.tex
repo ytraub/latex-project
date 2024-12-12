@@ -1,46 +1,121 @@
-\documentclass[12pt]{article}
-\usepackage{lingmacros}
-\usepackage{tree-dvips}
+\documentclass[a4paper,12pt]{article}
+
+% Pakete einbinden
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{makeidx}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{qrcode}
+\usepackage{tikz}
+\makeindex
+
+% Dokumentbeginn
 \begin{document}
 
-\section*{Notes for My Paper}
+% Titelseite
+\title{Erweitertes LATEX-Dokument}
+\author{Max Mustermann, Erika Musterfrau}
+\date{\today}
+\maketitle
 
-Don't forget to include examples of topicalization.
-They look like this:ddfdfdf
+% Abstract
+\begin{abstract}
+Dieses Dokument demonstriert die Nutzung von LATEX mit fortgeschrittenen Features wie Schriftformatierungen, mathematischen Formeln, Verweisen, QR-Codes, Grafiken, Tabellen und mehr.
+\end{abstract}
 
-{\small
-\enumsentence{Topicalization from sentential subject:\\ 
-\shortex{7}{a John$_i$ [a & kltukl & [el & 
-  {\bf l-}oltoir & er & ngii$_i$ & a Mary]]}
-{ & {\bf R-}clear & {\sc comp} & 
-  {\bf IR}.{\sc 3s}-love   & P & him & }
-{John, (it's) clear that Mary loves (him).}}
-}
+% Inhaltsverzeichnis
+\tableofcontents
+\newpage
 
-\subsection*{How to handle topicalization}
+% Liste der Abbildungen
+\listoffigures
+\newpage
 
-I'll just assume a tree structure like (\ex{1}).
+% Hauptteil (Beispielinhalt)
+\section{Einleitung}
+Dies ist die Einleitung. Hier wird das Thema kurz beschrieben.
 
-{\small
-\enumsentence{Structure of A$'$ Projections:\\ [2ex]
-\begin{tabular}[t]{cccc}
-    & \node{i}{CP}\\ [2ex]
-    \node{ii}{Spec} &   &\node{iii}{C$'$}\\ [2ex]
-        &\node{iv}{C} & & \node{v}{SAgrP}
+\section{Schriftformatierungen}
+\textbf{Fettdruck}, \textit{Kursivdruck}, und \textcolor{blue}{blaue Schriftfarbe} können einfach mit LATEX umgesetzt werden. Die Schriftgröße hier ist \Large manuell angepasst.
+
+\section{Mathematische Formeln}
+Unnummerierte Formel:
+\[
+a^2 + b^2 = c^2
+\]
+Nummerierte Formel:
+\begin{equation}
+\int_{0}^{\infty} e^{-x^2} dx = \frac{\sqrt{\pi}}{2}
+\label{eq:gauss}
+\end{equation}
+
+Verweis auf die nummerierte Formel \eqref{eq:gauss} im Text.
+
+\section{Verweise}
+Dieser Abschnitt enthält einen Verweis auf \hyperref[sec:tabellen]{Abschnitt \ref*{sec:tabellen}} auf Seite \pageref{sec:tabellen}.
+
+\section{Externe Links}
+Ein Link zu \href{https://www.latex-project.org}{LATEX-Projektseite}.
+
+\section{QR-Code}
+Ein QR-Code zur LATEX-Projektseite:
+\qrcode{https://www.latex-project.org}
+
+\section{Selbsterstellte Grafiken}
+Eine einfache Grafik:
+\begin{tikzpicture}
+\draw[thick,->] (0,0) -- (2,0) node[right]{x};
+\draw[thick,->] (0,0) -- (0,2) node[above]{y};
+\draw[thick] (0,0) -- (1,1);
+\end{tikzpicture}
+
+\section{Bilder}
+Ein eingebundenes Bild:
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{example-image}
+\caption{Eine Beispielabbildung}
+\label{fig:beispiel}
+\end{figure}
+
+\section{Codelisting}
+Ein Beispielcode:
+\begin{lstlisting}[language=Python, caption={Beispielcode in Python}]
+def hello_world():
+    print("Hello, world!")
+\end{lstlisting}
+
+\section{Tabellen}
+\label{sec:tabellen}
+Eine Beispielstabelle:
+\begin{table}[h!]
+\centering
+\begin{tabular}{|c|c|c|}
+\hline
+A & B & C \\
+\hline
+1 & 2 & 3 \\
+\hline
+4 & 5 & 6 \\
+\hline
 \end{tabular}
-\nodeconnect{i}{ii}
-\nodeconnect{i}{iii}
-\nodeconnect{iii}{iv}
-\nodeconnect{iii}{v}
-}
-}
+\caption{Eine einfache Tabelle}
+\end{table}
 
-\subsection*{Mood}
+\section{Fussnoten}
+Ein Beispiel für eine Fussnote\footnote{Dies ist eine Fussnote.} im Text.
 
-Mood changes when there is a topic, as well as when
-there is WH-movement.  \emph{Irrealis} is the mood when
-there is a non-subject topic or WH-phrase in Comp.
-\emph{Realis} is the mood when there is a subject topic
-or WH-phrase.
+% Bibliographie
+\newpage
+\bibliographystyle{plain}
+\bibliography{literatur}
+
+% Index
+\newpage
+\printindex
 
 \end{document}
