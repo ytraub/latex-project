@@ -3,7 +3,6 @@
 % Pakete einbinden
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{makeidx}
 \usepackage{xcolor}
@@ -11,20 +10,23 @@
 \usepackage{listings}
 \usepackage{qrcode}
 \usepackage{tikz}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+
 \makeindex
 
 % Dokumentbeginn
 \begin{document}
 
 % Titelseite
-\title{Erweitertes LATEX-Dokument}
-\author{Max Mustermann, Erika Musterfrau}
+\title{Experimente Mit Alu- Kohlenstoffbatterien}
+\author{Alexander Borca, Andrey Kalyanov und Yaron Traub}
 \date{\today}
 \maketitle
 
 % Abstract
 \begin{abstract}
-Dieses Dokument demonstriert die Nutzung von LATEX mit fortgeschrittenen Features wie Schriftformatierungen, mathematischen Formeln, Verweisen, QR-Codes, Grafiken, Tabellen und mehr.
+Dieses Dokument demonstriert die Nutzung von LATEX mit Features wie Schriftformatierungen, mathematischen Formeln, Verweisen, QR-Codes, Grafiken, Tabellen und mehr.
 \end{abstract}
 
 % Inhaltsverzeichnis
@@ -37,10 +39,18 @@ Dieses Dokument demonstriert die Nutzung von LATEX mit fortgeschrittenen Feature
 
 % Hauptteil (Beispielinhalt)
 \section{Einleitung}
-Dies ist die Einleitung. Hier wird das Thema kurz beschrieben.
+In den beiden Experimenten wurden unterschiedliche Methoden zur Herstellung von Batterien mit Kohlenstoff und Papier untersucht.
+
+\section{Batterie mit Aluprofil}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.5\textwidth]{Bild1}
+\caption{Eine Beispielabbildung}
+\label{fig:beispiel}
+\end{figure}
 
 \section{Schriftformatierungen}
-\textbf{Fettdruck}, \textit{Kursivdruck}, und \textcolor{blue}{blaue Schriftfarbe} können einfach mit LATEX umgesetzt werden. Die Schriftgröße hier ist \Large manuell angepasst.
+\textbf{Fettdruck}, \textit{Kursivdruck}, \textcolor{blue}{blaue Schriftfarbe}, \Large manuell angepasste Schriftgrösse.
 
 \section{Mathematische Formeln}
 Unnummerierte Formel:
@@ -77,7 +87,7 @@ Eine einfache Grafik:
 Ein eingebundenes Bild:
 \begin{figure}[h!]
 \centering
-\includegraphics[width=0.5\textwidth]{example-image}
+\includegraphics{Bild1}
 \caption{Eine Beispielabbildung}
 \label{fig:beispiel}
 \end{figure}
